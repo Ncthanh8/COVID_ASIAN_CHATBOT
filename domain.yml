@@ -1,0 +1,50 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- user_ask_wetther
+- bot_challenge
+- stop
+- Game
+- weather
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- game
+- user_ask_corona
+entities:
+- city
+- country
+- id
+slots:
+  city:
+    type: text
+  country:
+    type: text
+  id:
+    type: text
+responses:
+  utter_greet:
+  - text: Ho la
+  utter_cheer_up:
+  - text: Here is something to cheer you up https://www.youtube.com/
+  utter_did_that_help:
+  - text: Tao có thể giúp j cho m?
+  utter_happy:
+  - text: Chúc mừng
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: Tao là 1 con bot
+  utter_game:
+  - text: chơi game vừa thôi nghiện là dở đấy!!
+  utter_weather:
+  - text: Trời đẹp đấy đi chơi đi, di  {city} :>
+actions:
+- action_temp_city
+- action_corona
+- action_check_point
